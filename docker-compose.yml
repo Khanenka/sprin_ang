@@ -1,0 +1,21 @@
+version: "2.6"
+services:
+    backend:
+        platform: linux/x86_64
+        image: server
+        container_name: server
+        build:
+            context: ./server
+        ports:
+           - "8081:8081"
+    frontend:
+        image: my-app-jobs1
+        container_name: my-app-jobs1
+        build:
+            context: ./my-app-jobs1
+        ports:
+            - "4200:4200"
+        depends_on:
+            - backend
+        mem_limit: 4GB
+

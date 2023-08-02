@@ -1,0 +1,45 @@
+
+<h1 class="heading"><strong>HTTP </strong>Demo</h1>
+
+<div class="form-group">
+
+  <input type="text" class="form-control" name="userName" [(ngModel)]="name">
+</div>
+<input type="date" datetime="MM.dd.yyyy" class="form-control" name="date" [(ngModel)]="date">
+
+
+<div class="form-group">
+  <button type="button" (click)="getTable()">Get Info</button>
+</div>
+
+
+
+
+
+
+<table class='table'>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Date</th>
+    <th>State</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let repo of response;">
+<td>{{repo.id}}</td>
+    <td>{{repo.username}}</td>
+    <td>{{repo.statetime|date: 'dd.MM.yyyy HH:mm:ss'}}</td>
+    <td>{{repo.state}}</td>
+
+  </tr>
+  </tbody>
+</table>
+
+<pre>{{response | json}}</pre>
+
+
+
+
+

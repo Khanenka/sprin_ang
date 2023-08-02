@@ -1,0 +1,92 @@
+
+<body>
+
+            <div  class="container">
+
+
+
+
+
+
+
+               <form     class="example-form">
+
+
+
+
+      <div class="box">
+        <h2>Заполните подсказку</h2>
+    <div class="box1">
+      <mat-form-field class="example-form-text">
+        <mat-label>Текст</mat-label>
+        <textarea matInput="form-control"
+        name="text"
+        [(ngModel)]="user.text"
+        cdkTextareaAutosize cdkAutosizeMinRows="2" cdkAutosizeMaxRows="20"
+
+           placeholder="Текст"
+          >
+        </textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="box2">
+      <mat-form-field class="example-form-theme">
+        <mat-label>Тема</mat-label>
+        <textarea matInput="form-control"
+        name="theme"
+        [(ngModel)]="user.theme"
+
+
+        placeholder="Тема">
+        </textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="box3">
+      <mat-form-field class="example-form-selector">
+      <mat-select matInput="form-control"
+      name="schetOrStk"
+      [(value)]="user.schetOrStk"
+      placeholder="Счет/СТК"
+      >
+          <mat-option value="SCHET">СЧЕТ</mat-option>
+          <mat-option value="STK">СТК</mat-option>
+      </mat-select>
+
+    </mat-form-field>
+    </div>
+
+    <div class="box4">
+    <mat-form-field  [style.width.px]=215 class="example-form-date"appearance="fill" >
+      <mat-label >Дата</mat-label>
+      <input matInput="form-control"
+      name="dateOfCreation"
+      [(ngModel)]="user.dateOfCreation"
+      [matDatepicker]="picker" panelClass="datepickerOne">
+
+      <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    </div>
+
+    </div>
+
+    </form>
+
+
+
+
+
+
+
+</div>
+
+<button class="button-add" mat-raised-button color="primary" (click)="submit(user)" (click)="dialogRef.close(false)">Сохранить</button>
+
+<br>
+
+  <button class="button-add"  mat-raised-button color="Warn" (click)="dialogRef.close(false)">Закрыть</button>
+
+
+</body>
